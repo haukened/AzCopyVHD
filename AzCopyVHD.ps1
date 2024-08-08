@@ -1,22 +1,38 @@
 <#PSScriptInfo
 
-.VERSION 1.0
+.VERSION 1.1
 
-.GUID e97fdded-667a-4bf3-a54c-7500f786c109
+.GUID cd6bb01d-32ff-4dd5-afe2-d4ab1db68ffc
 
 .AUTHOR David Haukeness
 
-.COPYRIGHT (c) 2024 David Haukeness
+.COMPANYNAME
 
-.LICENSEURI https://www.github.com/haukened/AzCopyVHD/LICENSE
+.COPYRIGHT 2024 David Haukeness. Distributed under the MIT license.
 
-.PROJECTURI https://www.github.com/haukened/AzCopyVHD
+.TAGS
 
-.RELEASENOTES First Release.
+.LICENSEURI https://github.com/haukened/AzCopyVHD/LICENSE
+
+.PROJECTURI https://github.com/haukened/AzCopyVHD
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES Az 
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+Added module dependencies
+
+.PRIVATEDATA
 
 #>
 
-#requires -version 7
+#Requires -Module @{RequiredVersion = '12.2.0'; ModuleName = 'Az'}
+#Requires -version 7
 
 <#
     .SYNOPSIS
@@ -56,6 +72,12 @@
 
     .PARAMETER NoConfirm
     (Optional) If specified, the script will not prompt for confirmation before proceeding
+
+    .INPUTS
+    Required Parameters
+
+    .OUTPUTS
+    None
 
     .EXAMPLE
     PS> .\AzCopyVHD.ps1 -ResourceGroupName "MyResourceGroup" -VMName "MyVM" -StorageAccountName "MyStorageAccount" -StorageContainerName "MyContainer" -DestinationFileName "MyVHD.vhd"
